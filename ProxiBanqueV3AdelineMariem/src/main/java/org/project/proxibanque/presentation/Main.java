@@ -1,7 +1,6 @@
 package org.project.proxibanque.presentation;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -11,14 +10,8 @@ import org.project.proxibanque.entities.Compte;
 import org.project.proxibanque.entities.CompteCourant;
 import org.project.proxibanque.entities.CompteEpargne;
 import org.project.proxibanque.entities.Conseiller;
-import org.project.proxibanque.entities.Operation;
-import org.project.proxibanque.entities.OperationRetrait;
-import org.project.proxibanque.entities.OperationVersement;
-import org.project.proxibanque.persistence.IOperationDao;
 import org.project.proxibanque.service.ClientServiceImpl;
-import org.project.proxibanque.service.ConseillerServiceImpl;
 import org.project.proxibanque.service.IClientService;
-import org.project.proxibanque.service.IConseillerService;
 import org.project.proxibanque.service.IOperationService;
 import org.project.proxibanque.service.OperationServiceImpl;
 

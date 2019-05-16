@@ -73,9 +73,10 @@ public class ServletListeClients extends HttpServlet {
 		comp2.setClient(c1);
 		c1.setListComptes(listComptes);
 		ser.addClient(c1);
+		
 		request.setAttribute("clients", serv.getAllClients(cons1.getIdConseiller()));
 		
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("");
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("listeClients.jsp");
 		requestDispatcher.forward(request, response);
 		
 	}

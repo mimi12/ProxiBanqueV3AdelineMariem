@@ -11,7 +11,6 @@
 	<form action="ServletListeClients" method="get">
 		<h1>Liste de vos clients</h1>
 
-
 		<c:forEach items="${clients}" var="c">
 			<table>
 				<tr>
