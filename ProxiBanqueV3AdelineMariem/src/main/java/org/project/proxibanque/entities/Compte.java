@@ -22,9 +22,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
 /**
- * Attributs et méthodes relatifs aux Comptes des clients ProxiBanque
+ * Classe {@link Compte} contient les attributs d'un compte générale que ça soit
+ * un {@link CompteCourant} ou {@link CompteEpargne} ainsi la classe contient
+ * une référence vers le client concerné par le compte
  * 
- * @author Mariem et Chloé
+ * @author Mariem et Adeline
  *
  */
 @XmlRootElement

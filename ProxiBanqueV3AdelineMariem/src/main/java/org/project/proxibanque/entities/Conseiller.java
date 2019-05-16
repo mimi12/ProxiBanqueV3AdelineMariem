@@ -18,7 +18,7 @@ import javax.persistence.OneToMany;
  *
  */
 @Entity
-public class Conseiller implements Serializable{
+public class Conseiller implements Serializable {
 
 	// Attributs
 	@Id

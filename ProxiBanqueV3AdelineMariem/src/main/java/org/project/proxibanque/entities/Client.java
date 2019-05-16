@@ -21,11 +21,15 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- * Attributs et méthodes relatifs aux Clients de ProxiBanque
+ * Classe {@link Client} contient les attributs d'un objet Client les getters,
+ * les setters et les constructeurs un objet {@link Client} peu etre un
+ * {@link ClientEntreprise} ou un {@link ClientParticulier} de meme il peut
+ * avoir soit un {@link CompteCourant} soit un {@link CompteEpargne} soit une
+ * liste de compte formé par ces deux
  * 
- * @author Mariem et Chloé
- *
+ * @author Mariem et Adeline
  */
+
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 @Entity
@@ -33,8 +37,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @DiscriminatorColumn(name = "TypeClient", discriminatorType = DiscriminatorType.STRING)
 public class Client implements Serializable {
 
-	// Attributs
-
+	// Attributs de la classe Client
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	protected Long idClient;
@@ -46,16 +49,15 @@ public class Client implements Serializable {
 	protected String telephone;
 	protected String emailClient;
 
-	// Liste de comptes gérés
+	// Liste de comptes liés au Client
 	@OneToMany(mappedBy = "client", cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
 	protected List<Compte> listComptes = new ArrayList<Compte>();
-	
-	@ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE })
+
+	@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
 	@JoinColumn(name = "conseiller_id")
 	protected Conseiller conseiller;
 
-	// Constructeurs
-
+	// Constructeur par défaut de la classe Client
 	public Client() {
 		super();
 	}
@@ -71,7 +73,12 @@ public class Client implements Serializable {
 		this.telephone = telephone;
 	}
 
-	public Client(String nom, String prenom, String adresse, String mail) {
+	public Client(String nomClient, String prenomClient, String adresse, String mail) {
+		super();
+		this.nomClient = nomClient;
+		this.prenomClient = prenomClient;
+		this.adresse = adresse;
+		this.emailClient = mail;
 	}
 
 	// Getters & Setters
@@ -139,6 +146,13 @@ public class Client implements Serializable {
 	public void setEmailClient(String emailClient) {
 		this.emailClient = emailClient;
 	}
+	public List<Compte> getListComptes() {
+		return listComptes;
+	}
+
+	public void setListComptes(List<Compte> listComptes) {
+		this.listComptes = listComptes;
+	}
 
 	// ToString
 
@@ -149,12 +163,5 @@ public class Client implements Serializable {
 				+ telephone + "]";
 	}
 
-	public List<Compte> getListComptes() {
-		return listComptes;
-	}
-
-	public void setListComptes(List<Compte> listComptes) {
-		this.listComptes = listComptes;
-	}
-
+	
 }

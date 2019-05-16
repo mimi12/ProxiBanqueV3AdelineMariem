@@ -5,12 +5,15 @@ import java.util.Date;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
+
 /**
- * Attributs et méthodes relatifs aux Comptes Courants des clients ProxiBanque
+ * la classe {@link CompteCourant} hérite de la classe {@link Compte} un compte
+ * de type {@link CompteCourant} a comme attribut autorisationDecouvet qui a une
+ * valeur statique par défaut 1000
  * 
- * @author Mariem et Chloé
- *
+ * @author Mariem et Adeline
  */
+
 @Entity
 @DiscriminatorValue("C_Courant")
 public class CompteCourant extends Compte {
