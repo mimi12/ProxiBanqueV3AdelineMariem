@@ -168,4 +168,12 @@ public class Client implements Serializable {
 				+ telephone + "]";
 	}
 
+	public Conseiller getConseiller() {
+		return conseiller;
+	}
+
+	public void setConseiller(Conseiller conseiller) {
+		this.conseiller = conseiller;
+	}
+
 }
