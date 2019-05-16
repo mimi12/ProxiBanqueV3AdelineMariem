@@ -21,8 +21,6 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
-import org.apache.cxf.jaxrs.ext.xml.XMLInstruction;
-
 /**
  * Classe {@link Client} contient les attributs d'un objet Client les getters,
  * les setters et les constructeurs un objet {@link Client} peu etre un

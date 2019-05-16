@@ -63,10 +63,9 @@ public class CompteDaoImpl implements ICompteDao {
 			txn.begin();
 
 			compte = em.find(Compte.class, idCompte);
-			compte.getListOperations().size();
+			// compte.getListOperations().size();
 
 			txn.commit();
-
 		} catch (Exception e) {
 
 			if (txn != null) {
@@ -90,7 +89,8 @@ public class CompteDaoImpl implements ICompteDao {
 	@Override
 	public List<Compte> findAllCpt(Long codClient) {
 		EntityManager em3 = emf.createEntityManager();
-		TypedQuery<Compte> req3 = em3.createQuery("select comp from Compte comp where comp.client.idClient = :co", Compte.class);
+		TypedQuery<Compte> req3 = em3.createQuery("select comp from Compte comp where comp.client.idClient = :co",
+				Compte.class);
 		req3.setParameter("co", codClient);
 		return req3.getResultList();
 	}

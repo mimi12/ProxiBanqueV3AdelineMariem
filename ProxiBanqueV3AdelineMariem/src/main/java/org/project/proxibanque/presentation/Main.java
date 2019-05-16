@@ -28,7 +28,8 @@ public class Main {
 		// TODO Auto-generated method stub
 		List<Compte> listComptes = new ArrayList<Compte>();
 		IClientService ser = new ClientServiceImpl();
-
+		IOperationService serv2 = new OperationServiceImpl();
+		
 		Client c1 = new Client();
 		Client c2 = new Client();
 		c1.setNomClient("Lilo");
@@ -52,10 +53,16 @@ public class Main {
 		listComptes.add(comp1);
 		comp1.setClient(c1);
 		comp2.setClient(c1);
-
 		c1.setListComptes(listComptes);
-
 		ser.addClient(c1);
+		
+		
+		
+		
+		serv2.verser(comp1.getNumCompte(), 0.0);
+		serv2.retirer(comp2.getNumCompte(), 0.0);
+	
+	
 
 	}
 

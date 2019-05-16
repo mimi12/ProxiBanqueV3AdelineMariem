@@ -2,6 +2,7 @@ package org.project.proxibanque.entities;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
@@ -37,9 +38,10 @@ public class Operation {
 	protected Long idOperation;
 
 	@XmlTransient
-	@ManyToOne
+	@ManyToOne (cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
 	@JoinColumn(name = "compte_id", unique = true)
 	protected Compte compte;
+	
 	protected Date dateOperation;
 	protected Double montant;
 

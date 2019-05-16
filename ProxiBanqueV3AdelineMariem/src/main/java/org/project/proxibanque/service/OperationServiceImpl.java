@@ -4,6 +4,8 @@ import java.util.Date;
 
 import org.project.proxibanque.entities.Compte;
 import org.project.proxibanque.entities.Operation;
+import org.project.proxibanque.entities.OperationRetrait;
+import org.project.proxibanque.entities.OperationVersement;
 import org.project.proxibanque.persistence.CompteDaoImpl;
 import org.project.proxibanque.persistence.ICompteDao;
 import org.project.proxibanque.persistence.IOperationDao;
@@ -32,7 +34,7 @@ public class OperationServiceImpl implements IOperationService {
 
 		Compte compte = dao2.findCptById(numCompte);
 		compte.setSoldeCompte(compte.getSoldeCompte() + montant);
-		dao1.addOperation(new Operation(new Date(), montant), numCompte);
+		dao1.addOperation(new OperationVersement(new Date(), montant), numCompte);
 
 	}
 
@@ -45,7 +47,7 @@ public class OperationServiceImpl implements IOperationService {
 
 		Compte compte = dao2.findCptById(numCompte);
 		compte.setSoldeCompte(compte.getSoldeCompte() - montant);
-		dao1.addOperation(new Operation(new Date(), montant), numCompte);
+		dao1.addOperation(new OperationRetrait(new Date(), montant), numCompte);
 
 	}
 
