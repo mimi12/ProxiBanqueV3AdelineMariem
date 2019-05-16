@@ -38,5 +38,13 @@ public interface IOperationService {
 	 * @param montant
 	 */
 	public void effectuerVirement(Long numCompte1, Long numCompte2, Double montant);
+	
+	/**
+	 * Méthode qui permet de récuperer la liste des opérations effectuées par compte
+	 * @param numCompte
+	 */
+	public void recupererOperations(Long numCompte);
+	
+	
 
 }

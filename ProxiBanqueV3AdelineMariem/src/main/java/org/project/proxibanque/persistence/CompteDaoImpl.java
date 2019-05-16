@@ -7,6 +7,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import org.project.proxibanque.entities.Compte;
 
@@ -62,7 +63,7 @@ public class CompteDaoImpl implements ICompteDao {
 			txn.begin();
 
 			compte = em.find(Compte.class, idCompte);
-		//	compte.getListOperations().size();
+			compte.getListOperations().size();
 
 			txn.commit();
 
@@ -89,7 +90,7 @@ public class CompteDaoImpl implements ICompteDao {
 	@Override
 	public List<Compte> findAllCpt(Long codClient) {
 		EntityManager em3 = emf.createEntityManager();
-		Query req3 = em3.createQuery("select comp from Compte comp where comp.client.codClient = :co");
+		TypedQuery<Compte> req3 = em3.createQuery("select comp from Compte comp where comp.client.idClient = :co", Compte.class);
 		req3.setParameter("co", codClient);
 		return req3.getResultList();
 	}

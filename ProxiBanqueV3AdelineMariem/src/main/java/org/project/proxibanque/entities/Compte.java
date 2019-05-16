@@ -50,7 +50,7 @@ public class Compte {
 
 	// Liste des operations
 	@XmlTransient
-	@OneToMany(mappedBy = "compte")
+	@OneToMany(mappedBy = "compte", cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
 	protected List<Operation> listOperations = new ArrayList<Operation>();
 
 	// Constructeurs

@@ -7,6 +7,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import org.project.proxibanque.entities.Compte;
 import org.project.proxibanque.entities.Operation;
@@ -36,7 +37,7 @@ public class OperationDaoImpl implements IOperationDao {
 			txn.begin();
 
 			Compte compte = em.find(Compte.class, numCompte);
-		//	op.setCompte(compte);
+			op.setCompte(compte);
 			em.persist(op);
 
 		} catch (Exception e) {
@@ -61,7 +62,7 @@ public class OperationDaoImpl implements IOperationDao {
 	@Override
 	public List<Operation> consulterOperation(Long numCompte) {
 		EntityManager em = emf.createEntityManager();
-		Query req1 = em.createQuery("select op from Operaion op where op.compte.numCompte = :co");
+		TypedQuery<Operation> req1 = em.createQuery("select op from Operaion op where op.compte.numCompte = :co" , Operation.class);
 		req1.setParameter("co", numCompte);
 		return req1.getResultList();
 	}

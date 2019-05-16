@@ -19,9 +19,8 @@ public class IProxiBanqueWSImpl implements IProxiBanqueWS {
 	}
 
 	@Override
-	public Collection<Client> getAllClients() {
-		// TODO Auto-generated method stub
-		return null;
+	public Collection<Client> getAllClients(Long codeCons) {
+			return serv.getAllClients(codeCons);
 	}
 
 	@Override

@@ -20,10 +20,6 @@ public interface IProxiBanqueWS {
 	@Path("/clients/{id}")
 	Client getClient(@PathParam("id") String id);
 	
-	@GET
-	@Path("/clients/")
-	Collection<Client> getAllClients();
-	
 	@PUT
 	@Path("/clients/")
 	Response updateClient(Client client);
@@ -35,6 +31,10 @@ public interface IProxiBanqueWS {
 	@DELETE
 	@Path("/clients/{id}")
 	Response deleteClient(@PathParam("id") Client client);
+
+	@GET
+	@Path("/conseiller/{id}")
+	Collection<Client> getAllClients(@PathParam("id") Long codeCons);
 
 
 }

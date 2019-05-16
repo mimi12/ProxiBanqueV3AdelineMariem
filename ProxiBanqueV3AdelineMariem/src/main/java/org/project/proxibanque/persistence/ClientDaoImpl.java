@@ -7,6 +7,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import org.project.proxibanque.entities.Client;
 
@@ -97,7 +98,7 @@ public class ClientDaoImpl implements IClientDao {
 	@Override
 	public Collection<Client> getClients(Long codeCons) {
 		EntityManager em2 = emf.createEntityManager();
-		Query req2 = em2.createQuery("select cl from Client cl where cl.conseiller.codeCons = :co");
+		TypedQuery<Client> req2 = em2.createQuery("select cl from Client cl where cl.conseiller.idConseiller = :co", Client.class);
 		req2.setParameter("co", codeCons);
 		return req2.getResultList();
 	}

@@ -62,4 +62,10 @@ public class OperationServiceImpl implements IOperationService {
 
 	}
 
+	@Override
+	public void recupererOperations(Long numCompte) {
+		dao1.consulterOperation(numCompte);
+		
+	}
+
 }
