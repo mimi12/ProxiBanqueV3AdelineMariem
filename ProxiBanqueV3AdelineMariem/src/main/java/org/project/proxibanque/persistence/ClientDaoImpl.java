@@ -1,7 +1,6 @@
 package org.project.proxibanque.persistence;
 
 import java.util.Collection;
-import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -10,15 +9,24 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 import org.project.proxibanque.entities.Client;
-import org.project.proxibanque.entities.Compte;
 
+/**
+ * Classe qui implémente l'interface {@link IClientDao} elle permet
+ * d'implémenter les méthodes de l'interface, ces méthodes sont findClientById(),
+ * save() et getClients().
+ * 
+ * @author Mariem et Adeline
+ *
+ */
 public class ClientDaoImpl implements IClientDao {
 
 	EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
 
-	
 	Client client = null;
-	
+
+	/**
+	 *Méthode qui permet de récupérer un client par son id.
+	 */
 	@Override
 	public Client findClientById(Long id) {
 		EntityManager em2 = emf.createEntityManager();
@@ -28,8 +36,8 @@ public class ClientDaoImpl implements IClientDao {
 
 			txn2.begin();
 
-			client = em2.find(Client.class, id); 
-			//récupérer la liste des comptes
+			client = em2.find(Client.class, id);
+			// récupérer la liste des comptes
 			client.getListComptes().size();
 			txn2.commit();
 
@@ -50,8 +58,10 @@ public class ClientDaoImpl implements IClientDao {
 		return client;
 	}
 
-	// Client
 
+	/**
+	 * Méthode qui permet de persister un objet de type {@link Client} en base de données.
+	 */
 	@Override
 	public void save(Client c) {
 
@@ -81,7 +91,9 @@ public class ClientDaoImpl implements IClientDao {
 		}
 	}
 
-
+	/**
+	 * Méthode qui permet de récuperer une liste de clients de la base de données.
+	 */
 	@Override
 	public Collection<Client> getClients(Long codeCons) {
 		EntityManager em2 = emf.createEntityManager();
@@ -93,8 +105,7 @@ public class ClientDaoImpl implements IClientDao {
 	@Override
 	public void remove(Client client) {
 		// TODO Auto-generated method stub
-		
-	}
 
+	}
 
 }

@@ -11,7 +11,7 @@ import org.project.proxibanque.entities.Conseiller;
 
 /**
  * Classe qui implémente les méthodes de l'interface {@link IConseillerDao} qui
- * permettent la gestion du conseiller *
+ * permettent la gestion du conseiller, ces méthodes sont save(), findConsById()
  * 
  * @author Mariem et Adeline
  */
@@ -19,8 +19,11 @@ public class ConseillerDaoImpl implements IConseillerDao {
 
 	EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
 
-	// Conseiller
+	
 
+	/**
+	 * Méthode qui permet de persister un objet de type {@link Conseiller} en base de données.
+	 */
 	@Override
 	public void save(Conseiller cons) {
 
@@ -53,6 +56,9 @@ public class ConseillerDaoImpl implements IConseillerDao {
 
 	Conseiller conseiller = null;
 
+	/**
+	 * Méthode qui permet de récupérer un conseiller par son id.
+	 */
 	@Override
 	public Conseiller findConsById(Long idConseiller) {
 
@@ -63,8 +69,8 @@ public class ConseillerDaoImpl implements IConseillerDao {
 
 			txn1.begin();
 
-			conseiller = em1.find(Conseiller.class, idConseiller); 
-            conseiller.getListClients().size();
+			conseiller = em1.find(Conseiller.class, idConseiller);
+			conseiller.getListClients().size();
 			txn1.commit();
 
 		} catch (Exception e) {
@@ -77,7 +83,7 @@ public class ConseillerDaoImpl implements IConseillerDao {
 				em1.close();
 			}
 			if (emf != null) {
-//				//emf.close();
+				// emf.close();
 			}
 		}
 

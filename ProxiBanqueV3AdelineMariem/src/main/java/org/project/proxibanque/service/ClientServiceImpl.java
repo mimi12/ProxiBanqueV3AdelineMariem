@@ -12,7 +12,7 @@ public class ClientServiceImpl implements IClientService {
 
 	@Override
 	public Client getClient(Long id) {
-		// TODO Auto-generated method stub
+
 		return dao.findClientById(id);
 	}
 

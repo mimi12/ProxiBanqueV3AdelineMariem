@@ -4,6 +4,13 @@ import java.util.Collection;
 
 import org.project.proxibanque.entities.Client;
 
+/**
+ * Interface qui contient les signatures des méthodes save(), getClients(),
+ * findClientById()
+ * 
+ * @author Mariem et Adeline
+ *
+ */
 public interface IClientDao {
 
 	public Client findClientById(Long id);
