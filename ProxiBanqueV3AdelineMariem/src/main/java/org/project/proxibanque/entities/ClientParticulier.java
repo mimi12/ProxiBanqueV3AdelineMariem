@@ -4,10 +4,11 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 /**
- * Attributs et méthodes relatifs aux Clients Particuliers de ProxiBanque
+ * la classe {@link ClientParticulier} hérite de la classe {@link Client}, elle
+ * contient trois constructeurs, un par défaut et deux autres avec des
+ * paramètres.
  * 
- * @author Mariem et Chloé
- *
+ * @author Mariem et Adeline
  */
 @Entity
 @DiscriminatorValue("Particulier")

@@ -12,9 +12,11 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 /**
- * Attributs et méthodes relatifs aux Conseillers de ProxiBanque
+ * Attributs et méthodes relatifs aux Conseillers de ProxiBanque. La classe
+ * contient une liste de clients, deux constructeurs ainsi que les getters et
+ * setters.
  * 
- * @author Mariem et Chloé
+ * @author Mariem et Adeline
  *
  */
 @Entity

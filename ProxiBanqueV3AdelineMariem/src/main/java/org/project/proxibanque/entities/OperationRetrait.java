@@ -5,11 +5,11 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 /**
- * Attributs et méthodes relatifs aux opérations de retrait sur les comptes de
- * ProxiBanque
+ * la classe {@link OperationRetrait} hérite de la classe {@link Operation},
+ * elle contient deux constructeurs, un par défaut et un autre avec des
+ * paramètres.
  * 
- * @author Mariem et Chloé
- *
+ * @author Mariem et Adeline
  */
 @Entity
 @DiscriminatorValue("Retrait")
