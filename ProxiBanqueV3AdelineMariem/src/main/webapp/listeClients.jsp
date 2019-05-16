@@ -8,17 +8,31 @@
 <title>Liste clients</title>
 </head>
 <body>
+	<form action="ServletListeClients" method="get">
+		<h1>Liste de vos clients</h1>
 
-	<h1>Liste de vos clients</h1>
 
-	<c:forEach items="${clients}" var="c">
-		<p/>${c.nomClient}
-<p/>${c.prenomClient}
-<p/>${c.adresse}
-<p/>${c.codePostal}
-<p/>${c.ville}
-<p/>${c.telephone}
-</c:forEach>
+		<c:forEach items="${clients}" var="c">
+			<table>
+				<tr>
+					<td>Nom</td>
+					<td>Prénom</td>
+					<td>Adresse</td>
+					<td>Code Postal</td>
+					<td>Ville</td>
+					<td>Téléphone</td>
+				</tr>
+				<tr>
+					<td>${c.nomClient}</td>
+					<td>${c.prenomClient}</td>
+					<td>${c.adresse}</td>
+					<td>${c.codePostal}</td>
+					<td>${c.ville}</td>
+					<td>${c.telephone}</td>
+				</tr>
+			</table>
+		</c:forEach>
 
+	</form>
 </body>
 </html>
