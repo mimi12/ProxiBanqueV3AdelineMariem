@@ -10,7 +10,7 @@ public interface ICompteDao {
 
 	public Compte findCptById(Long idCompte); 
 
-	public List<Compte> findAllCpt();
+	public List<Compte> findAllCpt(Long codClient);
 
 	public void updateCompte(Compte compte);
 

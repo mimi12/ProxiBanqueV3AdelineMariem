@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 import org.project.proxibanque.entities.Client;
 import org.project.proxibanque.entities.Compte;
@@ -79,16 +80,14 @@ public class ClientDaoImpl implements IClientDao {
 			}
 		}
 	}
-	
-	
-
-	// A IMPLEMENTER
 
 
 	@Override
-	public Collection<Client> getClients() {
-		// TODO Auto-generated method stub
-		return null;
+	public Collection<Client> getClients(Long codeCons) {
+		EntityManager em2 = emf.createEntityManager();
+		Query req2 = em2.createQuery("select cl from Client cl where cl.conseiller.codeCons = :co");
+		req2.setParameter("co", codeCons);
+		return req2.getResultList();
 	}
 
 	@Override

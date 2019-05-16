@@ -8,7 +8,7 @@ public interface IClientDao {
 
 	public Client findClientById(Long id);
 
-	public Collection<Client> getClients();
+	public Collection<Client> getClients(Long codeCons);
 
 	public void save(Client client);
 

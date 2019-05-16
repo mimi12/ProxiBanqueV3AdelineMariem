@@ -1,5 +1,7 @@
 package org.project.proxibanque.persistence;
 
+import java.util.List;
+
 import org.project.proxibanque.entities.Operation;
 
 /**
@@ -11,5 +13,6 @@ import org.project.proxibanque.entities.Operation;
 public interface IOperationDao {
 	
 	public Operation addOperation(Operation op, Long numCompte);
+	public List<Operation> consulterOperation(Long numCompte);
 
 }

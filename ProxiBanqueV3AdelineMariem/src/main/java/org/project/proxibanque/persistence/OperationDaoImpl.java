@@ -1,9 +1,12 @@
 package org.project.proxibanque.persistence;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 import org.project.proxibanque.entities.Compte;
 import org.project.proxibanque.entities.Operation;
@@ -49,6 +52,14 @@ public class OperationDaoImpl implements IOperationDao {
 		}
 		
 		return op;
+	}
+
+	@Override
+	public List<Operation> consulterOperation(Long numCompte) {
+		EntityManager em = emf.createEntityManager();
+		Query req1 = em.createQuery("select op from Operaion op where op.compte.numCompte = :co");
+		req1.setParameter("co", numCompte);
+		return req1.getResultList();
 	}
 
 }

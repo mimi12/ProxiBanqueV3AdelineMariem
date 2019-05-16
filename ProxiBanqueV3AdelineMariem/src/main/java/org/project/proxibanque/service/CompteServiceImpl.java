@@ -20,12 +20,6 @@ public class CompteServiceImpl implements ICompteDao {
 	}
 
 	@Override
-	public List<Compte> findAllCpt() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public void updateCompte(Compte compte) {
 		// TODO Auto-generated method stub
 
@@ -35,6 +29,12 @@ public class CompteServiceImpl implements ICompteDao {
 	public void remove(Compte compte) {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public List<Compte> findAllCpt(Long codClient) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
