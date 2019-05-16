@@ -43,13 +43,14 @@ public class Compte {
 	protected Double soldeCompte;
 	protected Date dateOuvertCompte;
 
+	@XmlTransient
 	@ManyToOne
 	@JoinColumn(name = "client_id")
 	protected Client client;
 
 	// Liste des operations
 	@XmlTransient
-	@OneToMany(mappedBy = "compte", cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
+	@OneToMany(mappedBy = "compte")
 	protected List<Operation> listOperations = new ArrayList<Operation>();
 
 	// Constructeurs
@@ -87,14 +88,6 @@ public class Compte {
 	public void setDateOuvertCompte(Date dateOuvertCompte) {
 		this.dateOuvertCompte = dateOuvertCompte;
 	}
-
-//	public Conseiller getConseiller() {
-//		return conseiller;
-//	}
-//
-//	public void setConseiller(Conseiller conseiller) {
-//		this.conseiller = conseiller;
-//	}
 
 	public Client getClient() {
 		return client;

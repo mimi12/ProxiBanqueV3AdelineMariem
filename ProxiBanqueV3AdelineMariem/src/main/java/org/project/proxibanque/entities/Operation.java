@@ -15,6 +15,7 @@ import javax.persistence.ManyToOne;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  * Classe {@link Operation} contient les attributs d'une opération générale que ça soit
@@ -35,6 +36,7 @@ public class Operation {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	protected Long idOperation;
 
+	@XmlTransient
 	@ManyToOne
 	@JoinColumn(name = "compte_id", unique = true)
 	protected Compte compte;
@@ -45,12 +47,6 @@ public class Operation {
 	public Operation(Long idOperation) {
 		super();
 		this.idOperation = idOperation;
-	}
-
-	public Operation(Compte compte, Double montant) {
-		super();
-		this.compte = compte;
-		this.montant = montant;
 	}
 
 	public Operation(Date dateOperation, Double montant) {

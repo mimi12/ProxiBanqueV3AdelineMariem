@@ -36,7 +36,7 @@ public class OperationDaoImpl implements IOperationDao {
 			txn.begin();
 
 			Compte compte = em.find(Compte.class, numCompte);
-			op.setCompte(compte);
+		//	op.setCompte(compte);
 			em.persist(op);
 
 		} catch (Exception e) {

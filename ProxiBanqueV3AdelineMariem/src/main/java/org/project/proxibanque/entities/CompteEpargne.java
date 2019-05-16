@@ -39,10 +39,10 @@ public class CompteEpargne extends Compte {
 		return AUTORISATIONDECOUVERT;
 	}
 
-	@Override
-	public String toString() {
-		return "CompteEpargne [numCompte=" + numCompte + ", soldeCompte=" + soldeCompte + ", dateOuvertCompte="
-				+ dateOuvertCompte + ", client=" + client + ", listOperations=" + listOperations + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "CompteEpargne [numCompte=" + numCompte + ", soldeCompte=" + soldeCompte + ", dateOuvertCompte="
+//				+ dateOuvertCompte + ", client=" + client + ", listOperations=" + listOperations + "]";
+//	}
 
 }

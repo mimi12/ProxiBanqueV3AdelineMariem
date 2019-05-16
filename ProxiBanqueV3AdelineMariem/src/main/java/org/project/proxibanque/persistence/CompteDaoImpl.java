@@ -62,6 +62,7 @@ public class CompteDaoImpl implements ICompteDao {
 			txn.begin();
 
 			compte = em.find(Compte.class, idCompte);
+		//	compte.getListOperations().size();
 
 			txn.commit();
 

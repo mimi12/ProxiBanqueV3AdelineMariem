@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  * Attributs et méthodes relatifs aux Conseillers de ProxiBanque. La classe
@@ -58,7 +59,7 @@ public class Conseiller implements Serializable {
 	public void setNomConseiller(String nomConseiller) {
 		this.nomConseiller = nomConseiller;
 	}
-
+	@XmlTransient
 	public Set<Client> getListClients() {
 		return listClients;
 	}

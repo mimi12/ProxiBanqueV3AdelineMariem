@@ -34,10 +34,10 @@ public class CompteCourant extends Compte {
 		return AUTORISATIONDECOUVERT;
 	}
 
-	@Override
-	public String toString() {
-		return "CompteCourant [numCompte=" + numCompte + ", soldeCompte=" + soldeCompte + ", dateOuvertCompte="
-				+ dateOuvertCompte + ", client=" + client + ", listOperations=" + listOperations + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "CompteCourant [numCompte=" + numCompte + ", soldeCompte=" + soldeCompte + ", dateOuvertCompte="
+//				+ dateOuvertCompte + ", client=" + client + ", listOperations=" + listOperations + "]";
+//	}
 
 }

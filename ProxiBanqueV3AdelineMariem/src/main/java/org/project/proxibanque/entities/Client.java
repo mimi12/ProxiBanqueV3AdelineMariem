@@ -19,6 +19,9 @@ import javax.persistence.OneToMany;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+
+import org.apache.cxf.jaxrs.ext.xml.XMLInstruction;
 
 /**
  * Classe {@link Client} contient les attributs d'un objet Client les getters,
@@ -36,7 +39,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @DiscriminatorColumn(name = "TypeClient", discriminatorType = DiscriminatorType.STRING)
 public class Client implements Serializable {
 
-	//Attributs de la classe Client
+	// Attributs de la classe Client
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	protected Long idClient;
@@ -52,6 +55,7 @@ public class Client implements Serializable {
 	@OneToMany(mappedBy = "client", cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
 	protected List<Compte> listComptes = new ArrayList<Compte>();
 
+	@XmlTransient
 	@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
 	@JoinColumn(name = "conseiller_id")
 	protected Conseiller conseiller;
@@ -72,7 +76,7 @@ public class Client implements Serializable {
 		this.ville = ville;
 		this.telephone = telephone;
 	}
-	
+
 	// Constructeur avec paramètres
 	public Client(String nomClient, String prenomClient, String adresse, String mail) {
 		super();
@@ -81,7 +85,6 @@ public class Client implements Serializable {
 		this.adresse = adresse;
 		this.emailClient = mail;
 	}
-
 
 	public Long getIdClient() {
 		return idClient;
@@ -146,6 +149,8 @@ public class Client implements Serializable {
 	public void setEmailClient(String emailClient) {
 		this.emailClient = emailClient;
 	}
+
+
 	public List<Compte> getListComptes() {
 		return listComptes;
 	}
@@ -163,5 +168,4 @@ public class Client implements Serializable {
 				+ telephone + "]";
 	}
 
-	
 }
