@@ -6,6 +6,9 @@ import org.project.proxibanque.entities.Client;
 import org.project.proxibanque.persistence.ClientDaoImpl;
 import org.project.proxibanque.persistence.IClientDao;
 
+import org.slf4j.Logger;
+
+
 /**
  * Classe implémentant les méthodes relatives à la gestion de client telles
  * l'ajout et la consultation de client(s). Elle implémente l'interface
@@ -17,6 +20,7 @@ import org.project.proxibanque.persistence.IClientDao;
  */
 public class ClientServiceImpl implements IClientService {
 
+	private static final Logger LOGGER = org.slf4j.LoggerFactory.getLogger(ClientServiceImpl.class);
 	private IClientDao dao = new ClientDaoImpl();
 
 	/**
@@ -35,7 +39,9 @@ public class ClientServiceImpl implements IClientService {
 	public void addClient(Client client) {
 		if (client != null) {
 			dao.save(client);
+			LOGGER.info("Client bien ajouté ");
 		}
+		else LOGGER.error("Pas de client ajouté !");
 	}
 
 	/**

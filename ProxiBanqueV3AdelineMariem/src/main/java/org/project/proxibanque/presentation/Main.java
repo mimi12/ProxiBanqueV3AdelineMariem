@@ -25,9 +25,7 @@ public class Main {
 		comp1.setClient(c1);
 		comp2.setClient(c1);
 		c1.setListComptes(listComptes);
-		
 		ser.addClient(c1);
-		
 
 	}
 
