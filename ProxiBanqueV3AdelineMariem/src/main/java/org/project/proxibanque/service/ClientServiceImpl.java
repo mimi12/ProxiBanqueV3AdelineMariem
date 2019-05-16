@@ -17,17 +17,15 @@ public class ClientServiceImpl implements IClientService {
 	}
 
 	@Override
-	public Collection<Client> getAllClients() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	@Override
 	public void addClient(Client client) {
 		if (client != null) {
 			dao.save(client);
 		}
+	}
+
+	@Override
+	public Collection<Client> getAllClients(Long codeCons) {
+		return dao.getClients(codeCons);
 	}
 
 	@Override

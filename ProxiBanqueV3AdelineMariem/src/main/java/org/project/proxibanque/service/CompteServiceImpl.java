@@ -3,38 +3,31 @@ package org.project.proxibanque.service;
 import java.util.List;
 
 import org.project.proxibanque.entities.Compte;
+import org.project.proxibanque.persistence.CompteDaoImpl;
 import org.project.proxibanque.persistence.ICompteDao;
 
-public class CompteServiceImpl implements ICompteDao {
+public class CompteServiceImpl implements ICompteService {
+
+	private ICompteDao dao = new CompteDaoImpl();
 
 	@Override
-	public void save(Compte cpt) {
-		// TODO Auto-generated method stub
+	public void ajouterCompte(Compte compte) {
+		if (compte != null) {
+			dao.save(compte);
+		}
 
 	}
 
 	@Override
-	public Compte findCptById(Long idCompte) {
-		// TODO Auto-generated method stub
-		return null;
+	public Compte trouverCompteParID(Long idCompte) {
+
+		return dao.findCptById(idCompte);
 	}
 
 	@Override
-	public void updateCompte(Compte compte) {
-		// TODO Auto-generated method stub
+	public List<Compte> listerLesComptes(Long codClient) {
 
-	}
-
-	@Override
-	public void remove(Compte compte) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public List<Compte> findAllCpt(Long codClient) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.findAllCpt(codClient);
 	}
 
 }

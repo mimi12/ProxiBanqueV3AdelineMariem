@@ -8,7 +8,7 @@ public interface IClientService {
 
 	public Client getClient(Long id);
 
-	public Collection<Client> getAllClients();
+	public Collection<Client> getAllClients(Long codeCons);
 
 	public void addClient(Client client);
 
