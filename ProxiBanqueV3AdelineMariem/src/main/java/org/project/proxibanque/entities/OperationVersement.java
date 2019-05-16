@@ -6,11 +6,10 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 /**
- * Attributs et méthodes relatifs aux opérations de versement sur les comptes de
- * ProxiBanque
+ * la classe {@link OperationVersement} hérite de la classe {@link Operation}, 
+ * elle contient deux constructeurs, un par défaut et un avec des paramètres.
  * 
- * @author Mariem et Chloé
- *
+ * @author Mariem et Adeline
  */
 @Entity
 @DiscriminatorValue("Versement")

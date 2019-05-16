@@ -13,7 +13,6 @@ import javax.persistence.Entity;
  * 
  * @author Mariem et Adeline
  */
-
 @Entity
 @DiscriminatorValue("C_Courant")
 public class CompteCourant extends Compte {

@@ -6,10 +6,11 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 /**
- * Attributs et méthodes relatifs aux Comptes Epargne des clients ProxiBanque
+ * la classe {@link CompteEpargne} hérite de la classe {@link Compte}, un compte
+ * de type {@link CompteEpargne} a comme attribut TAUXREMUNERATIONDEFAUT  qui a une
+ * valeur statique par défaut de 0.03
  * 
- * @author Mariem et Chloé
- *
+ * @author Mariem et Adeline
  */
 @Entity
 @DiscriminatorValue("C_Epargne")

@@ -17,10 +17,11 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- * Attributs et méthodes relatifs aux opérations effectuées sur les comptes des
- * clients de ProxiBanque
+ * Classe {@link Operation} contient les attributs d'une opération générale que ça soit
+ * une opération de type  {@link OperationRetrait} ou de type  {@link OperationVersement},
+ * elle fait aussi référence au compte du client concerné par l'opération.
  * 
- * @author Mariem et Chloé
+ * @author Mariem et Adeline
  *
  */
 @XmlRootElement

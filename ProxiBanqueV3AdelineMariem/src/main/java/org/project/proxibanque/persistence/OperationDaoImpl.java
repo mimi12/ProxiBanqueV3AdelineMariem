@@ -6,7 +6,6 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 import org.project.proxibanque.entities.Compte;
-import org.project.proxibanque.entities.Conseiller;
 import org.project.proxibanque.entities.Operation;
 
 /**

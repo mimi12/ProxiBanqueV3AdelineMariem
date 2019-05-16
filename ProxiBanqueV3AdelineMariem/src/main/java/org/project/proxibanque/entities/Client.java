@@ -25,11 +25,10 @@ import javax.xml.bind.annotation.XmlRootElement;
  * les setters et les constructeurs un objet {@link Client} peu etre un
  * {@link ClientEntreprise} ou un {@link ClientParticulier} de meme il peut
  * avoir soit un {@link CompteCourant} soit un {@link CompteEpargne} soit une
- * liste de compte formé par ces deux
+ * liste de compte formé par ces deux.
  * 
  * @author Mariem et Adeline
  */
-
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 @Entity
@@ -37,7 +36,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @DiscriminatorColumn(name = "TypeClient", discriminatorType = DiscriminatorType.STRING)
 public class Client implements Serializable {
 
-	// Attributs de la classe Client
+	//Attributs de la classe Client
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	protected Long idClient;
@@ -62,6 +61,7 @@ public class Client implements Serializable {
 		super();
 	}
 
+	// Constructeur avec paramètres
 	public Client(String nomClient, String prenomClient, String adresse, Integer codePostal, String ville,
 			String telephone) {
 		super();
@@ -72,7 +72,8 @@ public class Client implements Serializable {
 		this.ville = ville;
 		this.telephone = telephone;
 	}
-
+	
+	// Constructeur avec paramètres
 	public Client(String nomClient, String prenomClient, String adresse, String mail) {
 		super();
 		this.nomClient = nomClient;
@@ -81,7 +82,6 @@ public class Client implements Serializable {
 		this.emailClient = mail;
 	}
 
-	// Getters & Setters
 
 	public Long getIdClient() {
 		return idClient;

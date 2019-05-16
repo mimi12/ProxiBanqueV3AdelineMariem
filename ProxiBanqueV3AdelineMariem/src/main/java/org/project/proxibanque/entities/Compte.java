@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlTransient;
 /**
  * Classe {@link Compte} contient les attributs d'un compte générale que ça soit
  * un {@link CompteCourant} ou {@link CompteEpargne} ainsi la classe contient
- * une référence vers le client concerné par le compte
+ * une référence vers le client concerné par le compte.
  * 
  * @author Mariem et Adeline
  *
