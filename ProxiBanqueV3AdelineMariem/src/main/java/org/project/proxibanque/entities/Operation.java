@@ -99,6 +99,4 @@ public class Operation {
 		return "Operation [idOperation=" + idOperation + ", compte=" + compte + "]";
 	}
 
-	// ToString
-
 }

@@ -49,7 +49,7 @@ public class OperationDaoImpl implements IOperationDao {
 		} finally {
 
 			if (em != null) {
-				em.close();
+			//	em.close();
 			}
 		}
 

@@ -46,21 +46,25 @@ public class Main {
 		c1.setConseiller(cons1);
 		c2.setConseiller(cons1);
 
-		Compte comp1 = new CompteCourant();
-		Compte comp2 = new CompteEpargne();
+		Compte comp1 = new CompteCourant(5000.0, new Date());
+		Compte comp2 = new CompteEpargne(5000.0, new Date());
 
 		listComptes.add(comp2);
 		listComptes.add(comp1);
 		comp1.setClient(c1);
 		comp2.setClient(c1);
+		serv2.verser(comp2.getNumCompte(), 12.0);
 		c1.setListComptes(listComptes);
+		
+	
+		
+		System.out.println(comp1.getNumCompte());
 		ser.addClient(c1);
 		
 		
 		
-		
-		serv2.verser(comp1.getNumCompte(), 0.0);
-		serv2.retirer(comp2.getNumCompte(), 0.0);
+	
+	
 	
 	
 

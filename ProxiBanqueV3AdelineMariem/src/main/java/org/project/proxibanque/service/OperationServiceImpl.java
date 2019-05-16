@@ -31,10 +31,12 @@ public class OperationServiceImpl implements IOperationService {
 	 */
 	@Override
 	public void verser(Long numCompte, Double montant) {
-
+		
 		Compte compte = dao2.findCptById(numCompte);
 		compte.setSoldeCompte(compte.getSoldeCompte() + montant);
+		dao2.save(compte);
 		dao1.addOperation(new OperationVersement(new Date(), montant), numCompte);
+
 
 	}
 
@@ -47,6 +49,7 @@ public class OperationServiceImpl implements IOperationService {
 
 		Compte compte = dao2.findCptById(numCompte);
 		compte.setSoldeCompte(compte.getSoldeCompte() - montant);
+		dao2.save(compte);
 		dao1.addOperation(new OperationRetrait(new Date(), montant), numCompte);
 
 	}
@@ -67,7 +70,7 @@ public class OperationServiceImpl implements IOperationService {
 	@Override
 	public void recupererOperations(Long numCompte) {
 		dao1.consulterOperation(numCompte);
-		
+
 	}
 
 }
