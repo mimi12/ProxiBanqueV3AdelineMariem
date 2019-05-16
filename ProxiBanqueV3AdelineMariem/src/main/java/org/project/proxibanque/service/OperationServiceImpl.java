@@ -10,9 +10,10 @@ import org.project.proxibanque.persistence.IOperationDao;
 import org.project.proxibanque.persistence.OperationDaoImpl;
 
 /**
- * Classe qui implémente les méthodes relatives aux opérations effectuées par
- * l'utilisateur telles que le versement, le retrait et le virement. On fait
- * également le lien entre les couches service et persistence.
+ * Classe qui implémente les méthodes relatives aux opérations effectuées par le
+ * conseiller telles que le versement, le retrait et le virement. Elle
+ * implémente l'interface {@link IOperationService}. On fait également le lien
+ * entre les couches service et persistence.
  * 
  * @author Mariem et Adeline
  *
