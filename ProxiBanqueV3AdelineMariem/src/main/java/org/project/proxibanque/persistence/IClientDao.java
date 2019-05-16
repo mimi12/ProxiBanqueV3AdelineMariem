@@ -14,6 +14,4 @@ public interface IClientDao {
 
 	public void remove(Client client);
 
-	void updateClient(Long idClient, String newName, String newPrenom, String newMail, String newAdresse);
-
 }

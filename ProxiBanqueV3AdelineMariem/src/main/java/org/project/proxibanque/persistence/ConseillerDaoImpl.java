@@ -24,25 +24,25 @@ public class ConseillerDaoImpl implements IConseillerDao {
 	@Override
 	public void save(Conseiller cons) {
 
-		EntityManager em10 = emf.createEntityManager();
-		EntityTransaction txn10 = em10.getTransaction();
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction txn = em.getTransaction();
 
 		try {
 
-			txn10.begin();
+			txn.begin();
 
-			em10.persist(cons); // Créé une entité Conseiller en BDD
+			em.persist(cons);
 
-			txn10.commit();
+			txn.commit();
 
 		} catch (Exception e) {
-			if (txn10 != null) {
-				txn10.rollback();
+			if (txn != null) {
+				txn.rollback();
 			}
 			e.printStackTrace();
 		} finally {
-			if (em10 != null) {
-				em10.close();
+			if (em != null) {
+				em.close();
 			}
 			if (emf != null) {
 //				//emf.close();
@@ -56,25 +56,25 @@ public class ConseillerDaoImpl implements IConseillerDao {
 	@Override
 	public Conseiller findConsById(Long idConseiller) {
 
-		EntityManager em11 = emf.createEntityManager();
-		EntityTransaction txn11 = em11.getTransaction();
+		EntityManager em1 = emf.createEntityManager();
+		EntityTransaction txn1 = em1.getTransaction();
 
 		try {
 
-			txn11.begin();
+			txn1.begin();
 
-			conseiller = em11.find(Conseiller.class, idConseiller); // Cherche l'entité Conseiller correspondant à l'id
-
-			txn11.commit();
+			conseiller = em1.find(Conseiller.class, idConseiller); 
+            conseiller.getListClients().size();
+			txn1.commit();
 
 		} catch (Exception e) {
-			if (txn11 != null) {
-				txn11.rollback();
+			if (txn1 != null) {
+				txn1.rollback();
 			}
 			e.printStackTrace();
 		} finally {
-			if (em11 != null) {
-				em11.close();
+			if (em1 != null) {
+				em1.close();
 			}
 			if (emf != null) {
 //				//emf.close();

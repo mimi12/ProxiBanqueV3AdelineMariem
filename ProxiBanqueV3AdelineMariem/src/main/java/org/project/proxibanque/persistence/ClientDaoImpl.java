@@ -30,8 +30,6 @@ public class ClientDaoImpl implements IClientDao {
 			client = em2.find(Client.class, id); 
 			//récupérer la liste des comptes
 			client.getListComptes().size();
-						// Cherche l'entité Client correspondant à l'id
-
 			txn2.commit();
 
 		} catch (Exception e) {
@@ -82,38 +80,7 @@ public class ClientDaoImpl implements IClientDao {
 		}
 	}
 	
-	@Override
-	public void updateClient(Long idClient, String newName, String newPrenom, String newMail, String newAdresse) {
-		EntityManager emcl = emf.createEntityManager();
-		EntityTransaction txncl = emcl.getTransaction();
-
-		try {
-
-			txncl.begin();
-
-			client = emcl.find(Client.class, idClient); // Cherche l'entité Client correspondant à l'id
-			client.setNomClient(newName);
-			client.setPrenomClient(newPrenom);
-			client.setAdresse(newAdresse);
-			client.setEmailClient(newMail);
-			txncl.commit();
-
-		} catch (Exception e) {
-			if (txncl != null) {
-				txncl.rollback();
-			}
-			e.printStackTrace();
-		} finally {
-			if (emcl != null) {
-				emcl.close();
-			}
-			if (emf != null) {
-				// emf.close();
-			}
-		}
-
-		return;
-	}
+	
 
 	// A IMPLEMENTER
 
@@ -129,11 +96,6 @@ public class ClientDaoImpl implements IClientDao {
 		// TODO Auto-generated method stub
 		
 	}
-
-	// Compte
-
-	
-
 
 
 }

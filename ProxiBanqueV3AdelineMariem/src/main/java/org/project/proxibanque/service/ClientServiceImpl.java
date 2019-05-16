@@ -22,11 +22,6 @@ public class ClientServiceImpl implements IClientService {
 		return null;
 	}
 
-	@Override
-	public void updateClient(Client client) {
-		// TODO Auto-generated method stub
-
-	}
 
 	@Override
 	public void addClient(Client client) {

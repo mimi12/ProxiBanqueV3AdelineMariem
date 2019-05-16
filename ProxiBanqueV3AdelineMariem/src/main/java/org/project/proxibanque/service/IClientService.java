@@ -10,8 +10,6 @@ public interface IClientService {
 
 	public Collection<Client> getAllClients();
 
-	public void updateClient(Client client);
-
 	public void addClient(Client client);
 
 	public void deleteClient(Client client);
