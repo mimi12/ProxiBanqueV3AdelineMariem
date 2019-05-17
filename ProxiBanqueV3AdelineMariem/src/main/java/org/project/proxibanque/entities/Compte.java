@@ -40,7 +40,7 @@ public class Compte {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	protected Long numCompte;
-	protected Double soldeCompte;
+	protected double soldeCompte;
 	protected Date dateOuvertCompte;
 
 	@XmlTransient
@@ -58,7 +58,7 @@ public class Compte {
 		super();
 	}
 
-	public Compte(Double soldeCompte, Date dateOuvertCompte) {
+	public Compte(double soldeCompte, Date dateOuvertCompte) {
 		super();
 		this.soldeCompte = soldeCompte;
 		this.dateOuvertCompte = dateOuvertCompte;
@@ -73,11 +73,11 @@ public class Compte {
 		this.numCompte = numCompte;
 	}
 
-	public Double getSoldeCompte() {
+	public double getSoldeCompte() {
 		return soldeCompte;
 	}
 
-	public void setSoldeCompte(Double soldeCompte) {
+	public void setSoldeCompte(double soldeCompte) {
 		this.soldeCompte = soldeCompte;
 	}
 

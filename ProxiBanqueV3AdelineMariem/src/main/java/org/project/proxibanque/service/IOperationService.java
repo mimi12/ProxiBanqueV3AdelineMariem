@@ -17,7 +17,7 @@ public interface IOperationService {
 	 * @param numCompte
 	 * @param montant
 	 */
-	public void verser(Long numCompte, Double montant);
+	public void verser(Long numCompte, double montant);
 
 	/**
 	 * Méthode permettant de retirer un montant sur le compte client via son numéro
@@ -26,7 +26,7 @@ public interface IOperationService {
 	 * @param numCompte
 	 * @param montant
 	 */
-	public void retirer(Long numCompte, Double montant);
+	public void retirer(Long numCompte, double montant);
 
 	/**
 	 * Méthode permettant d'effectuer le virement d'un montant de compte à compte
@@ -37,7 +37,7 @@ public interface IOperationService {
 	 * @param numCompte2
 	 * @param montant
 	 */
-	public void effectuerVirement(Long numCompte1, Long numCompte2, Double montant);
+	public void effectuerVirement(Long numCompte1, Long numCompte2, double montant);
 	
 	/**
 	 * Méthode qui permet de récuperer la liste des opérations effectuées par compte

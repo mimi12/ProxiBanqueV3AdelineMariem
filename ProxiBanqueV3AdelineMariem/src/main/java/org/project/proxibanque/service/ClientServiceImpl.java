@@ -7,6 +7,7 @@ import org.project.proxibanque.persistence.ClientDaoImpl;
 import org.project.proxibanque.persistence.IClientDao;
 
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 /**
@@ -20,7 +21,7 @@ import org.slf4j.Logger;
  */
 public class ClientServiceImpl implements IClientService {
 
-	private static final Logger LOGGER = org.slf4j.LoggerFactory.getLogger(ClientServiceImpl.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(ClientServiceImpl.class);
 	private IClientDao dao = new ClientDaoImpl();
 
 	/**
@@ -56,6 +57,12 @@ public class ClientServiceImpl implements IClientService {
 	public void deleteClient(Client client) {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public void updateClient(Long idClient, Client updateClient) {
+		dao.updateClient(idClient,updateClient);
+		
 	}
 
 }

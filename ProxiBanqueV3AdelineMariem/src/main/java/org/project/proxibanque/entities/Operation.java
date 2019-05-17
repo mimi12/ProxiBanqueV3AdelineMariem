@@ -38,12 +38,12 @@ public class Operation {
 	protected Long idOperation;
 
 	@XmlTransient
-	@ManyToOne (cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
-	@JoinColumn(name = "compte_id", unique = true)
+	@ManyToOne //(cascade = { CascadeType.PERSIST, CascadeType.REMOVE })
+	@JoinColumn(name = "compte_id")
 	protected Compte compte;
 	
 	protected Date dateOperation;
-	protected Double montant;
+	protected double montant;
 
 	// Constructeurs
 	public Operation(Long idOperation) {
@@ -51,7 +51,7 @@ public class Operation {
 		this.idOperation = idOperation;
 	}
 
-	public Operation(Date dateOperation, Double montant) {
+	public Operation(Date dateOperation, double montant) {
 		super();
 		this.dateOperation = dateOperation;
 		this.montant = montant;
@@ -62,11 +62,11 @@ public class Operation {
 	}
 
 	// Getters et Setters
-	public Double getMontant() {
+	public double getMontant() {
 		return montant;
 	}
 
-	public void setMontant(Double montant) {
+	public void setMontant(double montant) {
 		this.montant = montant;
 	}
 

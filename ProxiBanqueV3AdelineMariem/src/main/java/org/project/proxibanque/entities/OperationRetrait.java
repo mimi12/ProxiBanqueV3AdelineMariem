@@ -20,7 +20,7 @@ public class OperationRetrait extends Operation {
 		super();
 	}
 
-	public OperationRetrait(Date date, Double montant) {
+	public OperationRetrait(Date date, double montant) {
 		super(date, montant);
 	}
 

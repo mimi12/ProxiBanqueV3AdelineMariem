@@ -22,23 +22,17 @@ public class CompteEpargne extends Compte {
 	public static double getTauxremunerationdefaut() {
 		return TAUXREMUNERATIONDEFAUT;
 	}
-
-	private static final Double AUTORISATIONDECOUVERT = 1000.0;
-
 	public CompteEpargne() {
 		super();
 
 	}
 
-	public CompteEpargne(Double soldeCompte, Date dateOuvertCompte) {
+	public CompteEpargne(double soldeCompte, Date dateOuvertCompte) {
 
 		super(soldeCompte, dateOuvertCompte);
 	}
 
-	public static Double getAutorisationdecouvert() {
-		return AUTORISATIONDECOUVERT;
-	}
-
+	
 //	@Override
 //	public String toString() {
 //		return "CompteEpargne [numCompte=" + numCompte + ", soldeCompte=" + soldeCompte + ", dateOuvertCompte="

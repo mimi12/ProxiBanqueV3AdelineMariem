@@ -12,8 +12,8 @@ import org.project.proxibanque.entities.Client;
 
 /**
  * Classe qui implémente l'interface {@link IClientDao} elle permet
- * d'implémenter les méthodes de l'interface, ces méthodes sont findClientById(),
- * save() et getClients().
+ * d'implémenter les méthodes de l'interface, ces méthodes sont
+ * findClientById(), save() et getClients().
  * 
  * @author Mariem et Adeline
  *
@@ -25,7 +25,7 @@ public class ClientDaoImpl implements IClientDao {
 	Client client = null;
 
 	/**
-	 *Méthode qui permet de récupérer un client par son id.
+	 * Méthode qui permet de récupérer un client par son id.
 	 */
 	@Override
 	public Client findClientById(Long id) {
@@ -58,9 +58,9 @@ public class ClientDaoImpl implements IClientDao {
 		return client;
 	}
 
-
 	/**
-	 * Méthode qui permet de persister un objet de type {@link Client} en base de données.
+	 * Méthode qui permet de persister un objet de type {@link Client} en base de
+	 * données.
 	 */
 	@Override
 	public void save(Client c) {
@@ -97,7 +97,8 @@ public class ClientDaoImpl implements IClientDao {
 	@Override
 	public Collection<Client> getClients(Long codeCons) {
 		EntityManager em2 = emf.createEntityManager();
-		TypedQuery<Client> req2 = em2.createQuery("select cl from Client cl where cl.conseiller.idConseiller = :co", Client.class);
+		TypedQuery<Client> req2 = em2.createQuery("select cl from Client cl where cl.conseiller.idConseiller = :co",
+				Client.class);
 		req2.setParameter("co", codeCons);
 		return req2.getResultList();
 	}
@@ -105,6 +106,42 @@ public class ClientDaoImpl implements IClientDao {
 	@Override
 	public void remove(Client client) {
 		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void updateClient(Long idClient, Client updateClient) {
+		EntityManager em1 = emf.createEntityManager();
+		EntityTransaction txn1 = em1.getTransaction();
+
+		try {
+
+			txn1.begin();
+			client = em1.find(Client.class, idClient);
+			client.setNomClient(updateClient.getNomClient());
+			client.setAdresse(updateClient.getAdresse());
+			client.setPrenomClient(updateClient.getPrenomClient());
+			client.setEmailClient(updateClient.getEmailClient());
+			client.setVille(updateClient.getVille());
+			client.setCodePostal(updateClient.getCodePostal());
+			client.setTelephone(updateClient.getTelephone());
+			em1.persist(updateClient); // Créé une entité Client en BDD
+
+			txn1.commit();
+
+		} catch (Exception e) {
+			if (txn1 != null) {
+				txn1.rollback();
+			}
+			e.printStackTrace();
+		} finally {
+			if (em1 != null) {
+				em1.close();
+			}
+			if (emf != null) {
+//				//emf.close();
+			}
+		}
 
 	}
 

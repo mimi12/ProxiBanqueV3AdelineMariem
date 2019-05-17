@@ -18,19 +18,19 @@ import javax.persistence.Entity;
 public class CompteCourant extends Compte {
 
 	// Attributs
-	private static final Double AUTORISATIONDECOUVERT = 1000.0;
+	private static final double AUTORISATIONDECOUVERT = 1000.0;
 
 	public CompteCourant() {
 		super();
 
 	}
 
-	public CompteCourant(Double soldeCompte, Date dateOuvertCompte) {
+	public CompteCourant(double soldeCompte, Date dateOuvertCompte) {
 
 		super(soldeCompte, dateOuvertCompte);
 	}
 
-	public static Double getAutorisationdecouvert() {
+	public static double getAutorisationdecouvert() {
 		return AUTORISATIONDECOUVERT;
 	}
 

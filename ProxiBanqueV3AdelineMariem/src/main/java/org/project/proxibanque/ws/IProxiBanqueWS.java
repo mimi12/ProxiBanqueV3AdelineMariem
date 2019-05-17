@@ -22,7 +22,7 @@ public interface IProxiBanqueWS {
 	
 	@PUT
 	@Path("/clients/")
-	Response updateClient(Client client);
+	Response updateClient(Client updateClient);
 	
 	@POST
 	@Path("/clients/")

@@ -1,6 +1,7 @@
 package org.project.proxibanque.presentation;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -22,11 +23,11 @@ public class Main {
 		List<Compte> listComptes = new ArrayList<Compte>();
 		IClientService ser = new ClientServiceImpl();
 		IOperationService serv2 = new OperationServiceImpl();
-		
+
 		Client c1 = new Client();
-		Client c2 = new Client();
+		Client c2 = new Client("Adeline", "Mariem", "150 Rue paris 77500", "mariem.adeline@gmail.com");
 		c1.setNomClient("Lilo");
-		c2.setNomClient("Jason");
+	
 
 		Conseiller cons1 = new Conseiller();
 		cons1.setNomConseiller("Admin1");
@@ -39,7 +40,7 @@ public class Main {
 		c1.setConseiller(cons1);
 		c2.setConseiller(cons1);
 
-		Compte comp1 = new CompteCourant();
+		Compte comp1 = new CompteCourant(5000.0, new Date());
 		Compte comp2 = new CompteEpargne();
 
 		listComptes.add(comp2);
@@ -48,14 +49,10 @@ public class Main {
 		comp2.setClient(c1);
 		c1.setListComptes(listComptes);
 		ser.addClient(c1);
-		
-		
-		
-		
-//		serv2.verser(comp1.getNumCompte(), 0.0);
-//		serv2.retirer(comp2.getNumCompte(), 0.0);
-	
-	
+
+	// serv2.verser(comp1.getNumCompte(), 10.0);
+
+       //serv2.retirer(comp2.getNumCompte(), 0.0);
 
 	}
 

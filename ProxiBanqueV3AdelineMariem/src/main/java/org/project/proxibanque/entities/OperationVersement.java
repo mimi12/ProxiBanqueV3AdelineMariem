@@ -19,7 +19,7 @@ public class OperationVersement extends Operation {
 		super();
 	}
 
-	public OperationVersement(Date date, Double montant) {
+	public OperationVersement(Date date, double montant) {
 		super(date, montant);
 	}
 

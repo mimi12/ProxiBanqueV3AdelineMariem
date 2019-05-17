@@ -38,4 +38,6 @@ public interface IClientService {
 
 	public void deleteClient(Client client);
 
+	public void updateClient(Long idClient, Client updateClient);
+
 }

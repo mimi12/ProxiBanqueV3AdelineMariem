@@ -38,4 +38,6 @@ public interface IClientDao {
 	 */
 	public void remove(Client client);
 
+	public void updateClient(Long idClient, Client updateClient);
+
 }
